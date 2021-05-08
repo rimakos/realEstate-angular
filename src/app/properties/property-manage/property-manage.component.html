@@ -1,0 +1,82 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Manage Properties</h5>
+    <form [formGroup]="propertyForm" (ngSubmit)="onSubmit()">
+      <input type="hidden" formControlName="id"/>
+
+      <div class="mb-3">
+        <label for="price" class="form-label">Price</label>
+        <input type="number" class="form-control" id="price" formControlName="price"/>
+        <span *ngIf="!propertyForm.get('price')?.valid && propertyForm.get('price')?.touched"
+              class="text-danger">Please enter a price</span>
+      </div>
+
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <input type="text" class="form-control" id="description" formControlName="description"/>
+        <span *ngIf="!propertyForm.get('description')?.valid && propertyForm.get('description')?.touched"
+              class="text-danger">Please enter a description</span>
+      </div>
+      <div class="mb-3">
+        <label for="type" class="form-label">Type</label>
+        <input type="text" class="form-control" id="type" formControlName="type"/>
+        <span *ngIf="!propertyForm.get('type')?.valid && propertyForm.get('type')?.touched"
+              class="text-danger">Please enter a Type</span>
+      </div>
+      <div class="mb-3">
+        <label for="yearBuild" class="form-label">Year Build</label>
+        <input type="text" class="form-control" id="yearBuild" formControlName="yearBuild"/>
+        <span *ngIf="!propertyForm.get('yearBuild')?.valid && propertyForm.get('yearBuild')?.touched"
+              class="text-danger">Please enter a Type</span>
+      </div>
+      <div class="mb-3">
+        <label for="bedroom" class="form-label">Bedroom </label>
+        <input type="text" class="form-control" id="bedroom" formControlName="bedroom"/>
+        <span *ngIf="!propertyForm.get('bedroom')?.valid && propertyForm.get('bedroom')?.touched"
+              class="text-danger">Please enter a Value</span>
+      </div>
+      <div class="mb-3">
+        <label for="bathroom" class="form-label">Bathroom </label>
+        <input type="text" class="form-control" id="bathroom" formControlName="bathroom"/>
+        <span *ngIf="!propertyForm.get('bathroom')?.valid && propertyForm.get('bathroom')?.touched"
+              class="text-danger">Please enter a Value</span>
+      </div>
+      <div class="mb-3">
+        <label for="propertyStatus" class="form-label">Property Status </label>
+        <input type="text" class="form-control" id="propertyStatus" formControlName="propertyStatus"/>
+        <span *ngIf="!propertyForm.get('propertyStatus')?.valid && propertyForm.get('propertyStatus')?.touched"
+              class="text-danger">Please enter a Value</span>
+      </div>
+      <div class="mb-3">
+        <label for="location" class="form-label">Location </label>
+        <input type="text" class="form-control" id="location" formControlName="location"/>
+        <span *ngIf="!propertyForm.get('location')?.valid && propertyForm.get('location')?.touched"
+              class="text-danger">Please enter a Location</span>
+      </div>
+      <div class="mb-3">
+        <label for="featured" class="form-label">Featured </label>
+
+        <input type="checkbox" ng-model="checkboxModel.featured" id="featured" formControlName="featured"/>
+        <span *ngIf="!propertyForm.get('featured')?.valid && propertyForm.get('featured')?.touched"
+              class="text-danger">Please check if it is Featured</span>
+      </div>
+      <div class="mb-3">
+        <label for="categoryId" class="form-label">Category ID </label>
+        <input type="number" class="form-control" id="categoryId" formControlName="categoryId"/>
+        <span *ngIf="!propertyForm.get('categoryId')?.valid && propertyForm.get('categoryId')?.touched"
+              class="text-danger">Please enter a category ID</span>
+      </div>
+
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input type="text" class="form-control" id="title" formControlName="title"/>
+      </div>
+
+      <div>
+        <button [disabled]="!propertyForm.valid" class="btn btn-primary">Save Property</button>
+        <a routerLink="/properties" class="btn">Cancel</a>
+      </div>
+
+    </form>
+  </div>
+</div>
