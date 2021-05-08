@@ -1,0 +1,28 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Clients</h5>
+    <table class="table table-bordered">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let client of clients">
+        <th scope="row">{{client.id}}</th>
+        <td>{{client.name}}</td>
+        <td>{{client.email}}</td>
+        <td>{{client.phoneNumber}}</td>
+        <td>
+          <a class="me-3" [routerLink]="['/clients/manage', client.id]">Edit</a>
+          <a (click)="onDeleteClient(client.id)">Delete</a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
