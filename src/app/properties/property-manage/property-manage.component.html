@@ -19,9 +19,9 @@
       </div>
       <div class="mb-3">
         <label for="type" class="form-label">Type</label>
-        <input type="text" class="form-control" id="type" formControlName="type"/>
-        <span *ngIf="!propertyForm.get('type')?.valid && propertyForm.get('type')?.touched"
-              class="text-danger">Please enter a Type</span>
+        <select class="form-select" id="type" aria-label="Default select example" formControlName="type">
+          <option *ngFor="let typeViewModel of this.types" [value]="typeViewModel.id">{{typeViewModel.name}}</option>
+        </select>
       </div>
       <div class="mb-3">
         <label for="yearBuild" class="form-label">Year Build</label>
@@ -42,11 +42,12 @@
               class="text-danger">Please enter a Value</span>
       </div>
       <div class="mb-3">
-        <label for="propertyStatus" class="form-label">Property Status </label>
-        <input type="text" class="form-control" id="propertyStatus" formControlName="propertyStatus"/>
-        <span *ngIf="!propertyForm.get('propertyStatus')?.valid && propertyForm.get('propertyStatus')?.touched"
-              class="text-danger">Please enter a Value</span>
-      </div>
+        <label for="propertyStatus" class="form-label">Property Status</label>
+        <select class="form-select" id="propertyStatus" aria-label="Default select example"
+                formControlName="propertyStatus">
+          <option *ngFor="let propertyStatusViewModel of this.propertyStatus"
+                  [value]="propertyStatusViewModel.id">{{propertyStatusViewModel.name}}</option>
+        </select></div>
       <div class="mb-3">
         <label for="location" class="form-label">Location </label>
         <input type="text" class="form-control" id="location" formControlName="location"/>
@@ -55,17 +56,28 @@
       </div>
       <div class="mb-3">
         <label for="featured" class="form-label">Featured </label>
-
         <input type="checkbox" ng-model="checkboxModel.featured" id="featured" formControlName="featured"/>
         <span *ngIf="!propertyForm.get('featured')?.valid && propertyForm.get('featured')?.touched"
               class="text-danger">Please check if it is Featured</span>
       </div>
+
+
+      <!--            <div class="mb-3">-->
+      <!--              <label for="categoryId" class="form-label">Category ID </label>-->
+      <!--              <input type="number" class="form-control" id="categoryId" formControlName="categoryId"/>-->
+      <!--              <span *ngIf="!propertyForm.get('categoryId')?.valid && propertyForm.get('categoryId')?.touched"-->
+      <!--                    class="text-danger">Please enter a category ID</span>-->
+      <!--            </div>-->
+
+
       <div class="mb-3">
-        <label for="categoryId" class="form-label">Category ID </label>
-        <input type="number" class="form-control" id="categoryId" formControlName="categoryId"/>
-        <span *ngIf="!propertyForm.get('categoryId')?.valid && propertyForm.get('categoryId')?.touched"
-              class="text-danger">Please enter a category ID</span>
-      </div>
+        <label for="categoryId" class="form-label">Category</label>
+        <select class="form-select" id="categoryId" aria-label="Default select example"
+                formControlName="categoryId">
+          <option *ngFor="let categoryViewModel of this.categories"
+                  [value]="categoryViewModel.id">{{categoryViewModel.name}}</option>
+        </select></div>
+
 
       <div class="mb-3">
         <label for="title" class="form-label">Title</label>

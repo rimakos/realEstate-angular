@@ -46,3 +46,29 @@ export interface Property {
   featured: boolean;
   categoryId: number;
 }
+
+export interface SavePropertyRequest {
+  id: number;
+  price: number;
+  description: string;
+  title: string;
+  type: string;
+  yearBuild: number;
+  bedroom: number;
+  bathroom: number;
+  propertyStatus: string;
+  location: string;
+  featured: boolean;
+  categoryId: number;
+}
+
+export enum PropertyStatus {
+  Sale,
+  Rent
+}
+
+export enum Type {
+  Studio,
+  Duplex,
+  Triplex
+}

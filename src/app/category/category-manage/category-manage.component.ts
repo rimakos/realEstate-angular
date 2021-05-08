@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {Category, CategoryService} from '../../services/categoryService';
+import {Component, OnInit} from '@angular/core';
+import {Categories, Category, CategoryService} from '../../services/categoryService';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 
@@ -12,7 +12,9 @@ export class CategoryManageComponent implements OnInit {
 
   categoryForm = new FormGroup({});
 
-  constructor(private categoryService: CategoryService, private router: Router, private activeRoute: ActivatedRoute) { }
+
+  constructor(private categoryService: CategoryService, private router: Router, private activeRoute: ActivatedRoute) {
+  }
 
   ngOnInit(): void {
     if (this.activeRoute.snapshot.params.id) {
@@ -40,3 +42,4 @@ export class CategoryManageComponent implements OnInit {
   }
 
 }
+

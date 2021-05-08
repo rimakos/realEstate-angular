@@ -34,3 +34,13 @@ export interface Category {
   id: number;
   name: string;
 }
+
+export enum Categories{
+null,
+Commercial,
+Industrial,
+Residential,
+RawLand,
+SpecialUse
+
+}
