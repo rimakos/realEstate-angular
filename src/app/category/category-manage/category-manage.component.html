@@ -1,0 +1,21 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Manage Category</h5>
+    <form [formGroup]="categoryForm" (ngSubmit)="onSubmit()">
+      <input type="hidden" formControlName="id" />
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" formControlName="name"/>
+        <span *ngIf="!categoryForm.get('name')?.valid && categoryForm.get('name')?.touched"
+              class="text-danger">Please enter a valid name</span>
+      </div>
+
+      <div>
+        <button [disabled]="!categoryForm.valid" class="btn btn-primary">Save category</button>
+        <a routerLink="/categories" class="btn">Cancel</a>
+      </div>
+
+    </form>
+  </div>
+</div>
+
