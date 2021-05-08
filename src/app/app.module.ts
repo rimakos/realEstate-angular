@@ -9,6 +9,8 @@ import {HttpClientModule} from '@angular/common/http';
 import {ReactiveFormsModule} from '@angular/forms';
 import { CategoryTableComponent } from './category/category-table/category-table.component';
 import { CategoryManageComponent } from './category/category-manage/category-manage.component';
+import {PropertyManageComponent} from './properties/property-manage/property-manage.component';
+import {PropertyTableComponent} from './properties/property-table/property-table.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,9 @@ import { CategoryManageComponent } from './category/category-manage/category-man
     ClientManageComponent,
     CategoryTableComponent,
     CategoryManageComponent,
+    ClientManageComponent,
+    PropertyManageComponent,
+    PropertyTableComponent
   ],
   imports: [
     BrowserModule,
