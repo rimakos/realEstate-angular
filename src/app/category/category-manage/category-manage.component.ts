@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Categories, Category, CategoryService} from '../../services/categoryService';
+import {Category, CategoryService} from '../../services/categoryService';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 

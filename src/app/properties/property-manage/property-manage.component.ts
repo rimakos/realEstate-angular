@@ -3,7 +3,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Client} from '../../services/clientService';
 import {Property, PropertyService, PropertyStatus, Type} from '../../services/propertyService';
-import {Categories} from '../../services/categoryService';
+import {Category, CategoryService} from '../../services/categoryService';
 
 @Component({
   selector: 'app-property-manage',
@@ -12,6 +12,8 @@ import {Categories} from '../../services/categoryService';
 })
 export class PropertyManageComponent implements OnInit {
   propertyForm = new FormGroup({});
+
+  categories: Category[] = [];
 
   types: TypeViewModel[] = [
     {id: Type.Duplex, name: 'Duplex'},
@@ -22,16 +24,8 @@ export class PropertyManageComponent implements OnInit {
     {id: PropertyStatus.Rent, name: 'Rent'},
     {id: PropertyStatus.Sale, name: 'Sale'},
   ];
-  categories: CategoriesViewModel[] = [
-    {id: Categories.Commercial, name: 'Commercial'},
-    {id: Categories.Industrial, name: 'Industrial'},
-    {id: Categories.RawLand, name: 'Rawland'},
-    {id: Categories.Residential, name: 'Residential'},
-    {id: Categories.SpecialUse, name: 'SpecialUse'},
-  ];
 
-
-  constructor(private propertyService: PropertyService, private router: Router, private activeRoute: ActivatedRoute) {
+  constructor(private categoryService: CategoryService, private propertyService: PropertyService, private router: Router, private activeRoute: ActivatedRoute) {
   }
 
   ngOnInit(): void {
@@ -80,8 +74,4 @@ interface PropertyStatusViewModel {
   name: string;
 }
 
-interface CategoriesViewModel {
-  id: number;
-  name: string;
-}
 

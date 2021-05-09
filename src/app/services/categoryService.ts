@@ -35,12 +35,3 @@ export interface Category {
   name: string;
 }
 
-export enum Categories{
-null,
-Commercial,
-Industrial,
-Residential,
-RawLand,
-SpecialUse
-
-}
