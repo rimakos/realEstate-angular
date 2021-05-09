@@ -8,7 +8,7 @@
         <label for="title" class="form-label">Title</label>
         <input type="text" placeholder="Enter a title" class="form-control" id="title" formControlName="title"/>
         <span *ngIf="!propertyForm.get('title')?.valid && propertyForm.get('title')?.touched"
-              class="text-danger">Please enter a valid email</span>
+              class="text-danger">Please enter a valid Title</span>
       </div>
 
       <div class="mb-3">
@@ -57,16 +57,17 @@
                 aria-label="Default select example"
                 formControlName="propertyStatus">
           <option *ngFor="let s of this.statuses" [value]="s">{{s}}</option>
-          <span *ngIf="!propertyForm.get('propertyStatus')?.valid && propertyForm.get('properrtyStatus')?.touched"
-                class="text-danger">Please enter a Property Status</span>
-        </select></div>
+        </select>
+        <span *ngIf="!propertyForm.get('propertyStatus')?.valid && propertyForm.get('propertyStatus')?.touched"
+              class="text-danger">Please enter a Property Status</span>
+      </div>
 
 
       <div class="mb-3">
         <label for="price" class="form-label">Price</label>
         <input type="number" placeholder="Enter a valid Price" class="form-control" id="price" formControlName="price"/>
         <span *ngIf="!propertyForm.get('price')?.valid && propertyForm.get('price')?.touched"
-        class="text-danger">Please enter a price</span>
+              class="text-danger">Please enter a price</span>
       </div>
 
       <div class="mb-3">
@@ -74,7 +75,7 @@
         <input type="number" placeholder="From 2000 till 2020" class="form-control" id="yearBuild"
                formControlName="yearBuild"/>
         <span *ngIf="!propertyForm.get('yearBuild')?.valid && propertyForm.get('yearBuild')?.touched"
-        class="text-danger">Please enter a Year build ( From 2000 till 2020 ) </span>
+              class="text-danger">Please enter a Year build ( From 2000 till 2020 ) </span>
       </div>
 
 
@@ -94,7 +95,7 @@
 
       <div class="mb-3">
         <label for="featured" class="form-label">Featured </label>
-        <input type="checkbox" ng-model="checkboxModel.featured" id="featured" formControlName="featured"/>
+        <input type="checkbox" [value]="1" id="featured" formControlName="featured"/>
       </div>
 
       <div>
