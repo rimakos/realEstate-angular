@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ClientTableComponent } from './clients/client-table/client-table.component';
@@ -11,6 +10,8 @@ import { CategoryTableComponent } from './category/category-table/category-table
 import { CategoryManageComponent } from './category/category-manage/category-manage.component';
 import {PropertyManageComponent} from './properties/property-manage/property-manage.component';
 import {PropertyTableComponent} from './properties/property-table/property-table.component';
+import {ReservationTableComponent} from './reservations/reservation-table/reservation-table.component';
+import {ReservationManageComponent} from './reservations/reservation-manage/reservation-manage.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,9 @@ import {PropertyTableComponent} from './properties/property-table/property-table
     CategoryManageComponent,
     ClientManageComponent,
     PropertyManageComponent,
-    PropertyTableComponent
+    PropertyTableComponent,
+    ReservationTableComponent,
+    ReservationManageComponent
   ],
     imports: [
         BrowserModule,
