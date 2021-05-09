@@ -17,6 +17,7 @@
         <td>
           <a class="me-3" [routerLink]="['/categories/manage', categories.id]">Edit</a>
           <a (click)="onDeleteCategory(categories.id)">Delete</a>
+          <a class="me-3" [routerLink]="['/properties/byCategory', categories.id]"> Property List</a>
         </td>
       </tr>
       </tbody>

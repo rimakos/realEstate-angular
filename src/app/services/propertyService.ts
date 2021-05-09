@@ -29,6 +29,9 @@ export class PropertyService {
   delete(id: number): Observable<void> {
     return this.http.delete<void>(`${this.baseUrl}/${id}`);
   }
+  getbyCategory(id: number): Observable<Property[]>{
+    return this.http.get<Property[]>(`${this.baseUrl}/byCategory/${id}`);
+  }
 
 }
 

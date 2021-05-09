@@ -8,6 +8,7 @@ import {PropertyTableComponent} from './properties/property-table/property-table
 import {PropertyManageComponent} from './properties/property-manage/property-manage.component';
 import {ReservationTableComponent} from './reservations/reservation-table/reservation-table.component';
 import {ReservationManageComponent} from './reservations/reservation-manage/reservation-manage.component';
+import {PropertiesByCategoryTableComponent} from './properties-by-category-table/properties-by-category-table.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/clients', pathMatch: 'full'},
@@ -25,6 +26,7 @@ const routes: Routes = [
   {path: 'reservations', component: ReservationTableComponent},
   {path: 'reservations/manage', component: ReservationManageComponent},
   {path: 'reservations/manage/:id', component: ReservationManageComponent},
+  {path: 'properties/byCategory/:id', component: PropertiesByCategoryTableComponent}
 
 
 ];
