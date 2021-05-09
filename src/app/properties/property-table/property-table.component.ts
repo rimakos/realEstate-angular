@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Property, PropertyService} from '../../services/propertyService';
+import {Category, CategoryService} from '../../services/categoryService';
 
 @Component({
   selector: 'app-property-table',
@@ -10,7 +11,7 @@ export class PropertyTableComponent implements OnInit {
 
   properties: Property[] = [];
 
-  constructor(private propertyService: PropertyService) {
+  constructor( private propertyService: PropertyService) {
   }
 
   ngOnInit(): void {
