@@ -29,6 +29,8 @@ const routes: Routes = [
   {path: 'properties/byCategory/:id', component: PropertiesByCategoryTableComponent}
 
 
+
+
 ];
 
 @NgModule({

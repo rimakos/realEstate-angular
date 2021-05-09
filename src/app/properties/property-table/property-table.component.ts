@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Property, PropertyService} from '../../services/propertyService';
+import {Property, PropertyService, PropertyStatus} from '../../services/propertyService';
 import {Category, CategoryService} from '../../services/categoryService';
 
 @Component({
@@ -20,6 +20,12 @@ export class PropertyTableComponent implements OnInit {
 
   updateProperties(): void {
     this.propertyService.getAll().subscribe(response => {
+      this.properties = response;
+    });
+  }
+
+  filterByStatus(status: string): void{
+    this.propertyService.getByStatus(status).subscribe(response => {
       this.properties = response;
     });
   }

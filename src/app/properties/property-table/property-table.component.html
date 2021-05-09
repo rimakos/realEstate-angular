@@ -2,6 +2,11 @@
   <div class="card-body">
     <h5 class="card-title">Properties</h5>
     <a class="btn btn-primary" routerLink="/properties/manage">Create</a>
+    <div class="btn-group" role="group" style="float: right">
+      <a (click)="updateProperties()" class="btn btn-primary">All</a>
+      <a (click)="filterByStatus('Rent')" class="btn btn-primary">Rent</a>
+      <a (click)="filterByStatus('Sale')" class="btn btn-primary">Sale</a>
+    </div>
 
     <table class="table table-bordered">
       <thead>

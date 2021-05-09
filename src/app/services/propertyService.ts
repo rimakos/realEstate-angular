@@ -32,7 +32,9 @@ export class PropertyService {
   getbyCategory(id: number): Observable<Property[]>{
     return this.http.get<Property[]>(`${this.baseUrl}/byCategory/${id}`);
   }
-
+  getByStatus(status: string): Observable<Property[]> {
+    return this.http.get<Property[]>(`${this.baseUrl}/byStatus/${status}`);
+  }
 }
 
 export interface Property {
