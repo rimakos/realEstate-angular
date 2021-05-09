@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
-import {Client} from '../../services/clientService';
 import {Property, PropertyService, PropertyStatus, Type} from '../../services/propertyService';
 import {Category, CategoryService} from '../../services/categoryService';
 
@@ -12,8 +11,8 @@ import {Category, CategoryService} from '../../services/categoryService';
 })
 export class PropertyManageComponent implements OnInit {
   propertyForm = new FormGroup({});
-
   categories: Category[] = [];
+
 
   types: TypeViewModel[] = [
     {id: Type.Duplex, name: 'Duplex'},
@@ -25,6 +24,7 @@ export class PropertyManageComponent implements OnInit {
     {id: PropertyStatus.Sale, name: 'Sale'},
   ];
 
+  // tslint:disable-next-line:max-line-length
   constructor(private categoryService: CategoryService, private propertyService: PropertyService, private router: Router, private activeRoute: ActivatedRoute) {
   }
 
@@ -37,6 +37,10 @@ export class PropertyManageComponent implements OnInit {
     } else {
       this.propertyForm = this.createPropertyForm({} as Property);
     }
+
+    this.categoryService.getAll().subscribe(response => {
+      this.categories = response;
+    });
   }
 
   createPropertyForm(property: Property): FormGroup {

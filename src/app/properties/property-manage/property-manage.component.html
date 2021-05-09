@@ -61,19 +61,21 @@
               class="text-danger">Please check if it is Featured</span>
       </div>
 
+
+<!--                  <div class="mb-3">-->
+<!--                    <label for="categoryId" class="form-label">Category ID </label>-->
+<!--                    <input type="number" class="form-control" id="categoryId" formControlName="categoryId"/>-->
+<!--                    <span *ngIf="!propertyForm.get('categoryId')?.valid && propertyForm.get('categoryId')?.touched"-->
+<!--                          class="text-danger">Please enter a category ID</span>-->
+<!--                  </div>-->
+
       <div class="mb-3">
-        <label for="categoryId" class="form-label">Category ID </label>
-<!--        <select class="form-select" id="categoryId" aria-label="Default select example" formControlName="categoryId">-->
-        <option *ngFor="let categories of this.categories" [value]="categories.name">{{categories.id}}</option>
-        <input type="number" class="form-control" id="categoryId" formControlName="categoryId"/>
-      </div>
-
-
-
-
-
-
-
+        <label for="categoryId" class="form-label"> Category</label>
+        <select class="form-select" id="categoryId" aria-label="Default select example"
+                formControlName="categoryId">
+          <option *ngFor="let category of categories"
+                  [value]="category.id">{{category.name}}</option>
+        </select></div>
 
 
       <div class="mb-3">
