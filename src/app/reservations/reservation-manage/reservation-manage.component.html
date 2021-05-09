@@ -22,6 +22,18 @@
               class="text-danger">Please enter a valid Property Id</span>
       </div>
       <div class="mb-3">
+        <label for="clientName" class="clientId">Client Name</label>
+        <input type="text" class="form-control" id="clientName" formControlName="clientName"/>
+        <span *ngIf="!reservationForm.get('clientName')?.valid && reservationForm.get('clientName')?.touched"
+              class="text-danger">Please enter a valid Client Name</span>
+      </div>
+      <div class="mb-3">
+        <label for="category" class="category">Category</label>
+        <input type="text" class="form-control" id="category" formControlName="category"/>
+        <span *ngIf="!reservationForm.get('category')?.valid && reservationForm.get('category')?.touched"
+              class="text-danger">Please enter a valid Category</span>
+      </div>
+      <div class="mb-3">
         <label for="clientId" class="clientId">Client Id</label>
         <input type="text" class="form-control" id="clientId" formControlName="clientId"/>
         <span *ngIf="!reservationForm.get('clientId')?.valid && reservationForm.get('clientId')?.touched"

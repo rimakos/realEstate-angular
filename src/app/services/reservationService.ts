@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import {Property} from './propertyService';
+import {Client} from './clientService';
 
 @Injectable({
   providedIn: 'root'
@@ -32,9 +34,21 @@ export class ReservationService {
 
 export interface Reservation {
   id: number;
+  name: string;
+  finalPrice: number;
+  comment: string;
+  client: Client;
+  property: Property;
+}
+
+export interface SaveReservationRequest {
+  id: number;
+  name: string;
   finalPrice: number;
   comment: string;
   clientId: number;
+  category: string;
   propertyId: number;
+
 }
 
