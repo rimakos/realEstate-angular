@@ -1,7 +1,7 @@
 <div class="card">
   <div class="card-body">
     <h5 class="card-title">Categories</h5>
-    <a routerLink="/categories/manage">Create new</a>
+    <a routerLink="/categories/manage"class="btn btn-primary">Create new</a>
     <table class="table table-bordered">
       <thead>
       <tr>
@@ -16,8 +16,8 @@
         <td>{{categories.name}}</td>
         <td>
           <a class="me-3" [routerLink]="['/categories/manage', categories.id]">Edit</a>
+          <a class="me-3" [routerLink]="['/properties/byCategory', categories.id]">Property List</a>
           <a (click)="onDeleteCategory(categories.id)">Delete</a>
-          <a class="me-3" [routerLink]="['/properties/byCategory', categories.id]"> Property List</a>
         </td>
       </tr>
       </tbody>

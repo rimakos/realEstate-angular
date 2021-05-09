@@ -2,6 +2,7 @@
   <div class="card-body">
     <h5 class="card-title">Properties</h5>
 <!--    <a class="btn btn-primary" routerLink="/properties/manage">Create</a>-->
+    <a routerLink="/categories" class="btn btn-primary" style="float: right">Back</a>
 
     <table class="table table-bordered">
       <thead>
@@ -36,8 +37,6 @@
         <td>{{property.featured}}</td>
         <td>{{property.categoryId}}</td>
         <td>
-<!--          <a class="me-3" [routerLink]="['/properties/manage', property.id]">Edit</a>-->
-<!--          <a (click)="onDeleteProperties(property.id)">Delete</a>-->
         </td>
       </tr>
       </tbody>
