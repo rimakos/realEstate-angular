@@ -7,20 +7,20 @@
       <thead>
       <tr>
         <th scope="col">#</th>
-        <th scope="col">Id</th>
+        <th scope="col">Client Name</th>
+        <th scope="col">Property</th>
         <th scope="col">Final Price</th>
         <th scope="col">Comment</th>
-        <th scope="col">Client Id</th>
-        <th scope="col">Property Id</th>
+        <th scope="col">Actions</th>
         </tr>
       </thead>
       <tbody>
       <tr *ngFor="let reservation of reservations">
-        <th scope="row">{{reservation.id}}</th>
+        <td scope="row">{{reservation.id}}</td>
+        <td>{{reservation.client.name}}</td>
+        <td>{{reservation.property.title}}</td>
         <td>{{reservation.finalPrice}}</td>
         <td>{{reservation.comment}}</td>
-        <td>{{reservation.clientId}}</td>
-        <td>{{reservation.propertyId}}</td>
          <td>
           <a class="me-3" [routerLink]="['/reservations/manage', reservation.id]">Edit</a>
           <a (click)="onDeleteReservations(reservation.id)">Delete</a>

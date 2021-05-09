@@ -12,7 +12,6 @@ export class ReservationManageComponent implements OnInit {
 
   reservationForm = new FormGroup({});
 
-
   constructor(private reservationService: ReservationService, private router: Router, private activeRoute: ActivatedRoute) {
   }
 
@@ -30,11 +29,10 @@ export class ReservationManageComponent implements OnInit {
   createReservationForm(reservation: Reservation): FormGroup {
     return new FormGroup({
       id: new FormControl(reservation.id),
+      clientName: new FormControl(reservation.name),
       finalPrice: new FormControl(reservation.finalPrice, Validators.required),
       comment: new FormControl(reservation.comment),
-      propertyId: new FormControl(reservation.propertyId),
-      clientId: new FormControl(reservation.clientId),
-      });
+    });
   }
 
   onSubmit(): void {
