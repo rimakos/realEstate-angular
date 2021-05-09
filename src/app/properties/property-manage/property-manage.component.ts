@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Optional} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Property, PropertyService, PropertyStatus, Type} from '../../services/propertyService';
@@ -28,7 +28,9 @@ export class PropertyManageComponent implements OnInit {
           this.propertyForm = this.createPropertyForm(property);
         });
     } else {
-      this.propertyForm = this.createPropertyForm({} as Property);
+      this.propertyForm = this.createPropertyForm({
+        categoryId: 0
+      } as Property);
     }
 
     this.categoryService.getAll().subscribe(response => {
@@ -39,17 +41,17 @@ export class PropertyManageComponent implements OnInit {
   createPropertyForm(property: Property): FormGroup {
     return new FormGroup({
       id: new FormControl(property.id),
-      price: new FormControl(property.price, Validators.required),
-      description: new FormControl(property.description, [Validators.required]),
-      title: new FormControl(property.title),
-      type: new FormControl(property.type),
-      yearBuild: new FormControl(property.yearBuild),
-      bedroom: new FormControl(property.bedroom),
-      bathroom: new FormControl(property.bathroom),
-      propertyStatus: new FormControl(property.propertyStatus),
-      location: new FormControl(property.location),
+      title: new FormControl(property.title, Validators.required),
+      type: new FormControl(property.type, Validators.required),
+      propertyStatus: new FormControl(property.propertyStatus, Validators.required),
+      categoryId: new FormControl(property.categoryId, [Validators.required, Validators.min(1)]),
+      description: new FormControl(property.description),
+      location: new FormControl(property.location, Validators.required),
+      price: new FormControl(property.price, [Validators.required, Validators.min(1)]),
+      yearBuild: new FormControl(property.yearBuild, [Validators.required, Validators.min(2000), Validators.max(2020)]),
+      bedroom: new FormControl(property.bedroom, [Validators.required, Validators.min(1), Validators.max(20)]),
+      bathroom: new FormControl(property.bathroom, [Validators.required, Validators.min(1), Validators.max(20)]),
       feautered: new FormControl(property.featured),
-      categoryId: new FormControl(property.categoryId),
     });
   }
 
