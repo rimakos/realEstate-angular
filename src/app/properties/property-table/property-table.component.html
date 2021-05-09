@@ -7,33 +7,33 @@
       <thead>
       <tr>
         <th scope="col">#</th>
-        <th scope="col">price</th>
-        <th scope="col">Description</th>
         <th scope="col">title</th>
+        <th scope="col">Property Status</th>
+        <th scope="col">Location</th>
         <th scope="col">Type</th>
+        <th scope="col">Description</th>
+        <th scope="col">Category ID</th>
+        <th scope="col">price</th>
         <th scope="col">Year Build</th>
         <th scope="col">Bedrooms</th>
         <th scope="col">Bathrooms</th>
-        <th scope="col">Property Status</th>
-        <th scope="col">Location</th>
         <th scope="col">Featured</th>
-        <th scope="col">Category ID</th>
       </tr>
       </thead>
       <tbody>
       <tr *ngFor="let property of properties">
         <th scope="row">{{property.id}}</th>
-        <td>{{property.price}}</td>
-        <td>{{property.description}}</td>
         <td>{{property.title}}</td>
+        <td>{{property.propertyStatus}}</td>
+        <td>{{property.location}}</td>
         <td>{{property.type}}</td>
+        <td>{{property.description}}</td>
+        <td>{{property.categoryId}}</td>
+        <td>{{property.price}}</td>
         <td>{{property.yearBuild}}</td>
         <td>{{property.bedroom}}</td>
         <td>{{property.bathroom}}</td>
-        <td>{{property.propertyStatus}}</td>
-        <td>{{property.location}}</td>
         <td>{{property.featured}}</td>
-        <td>{{property.categoryId}}</td>
         <td>
           <a class="me-3" [routerLink]="['/properties/manage', property.id]">Edit</a>
           <a (click)="onDeleteProperties(property.id)">Delete</a>
