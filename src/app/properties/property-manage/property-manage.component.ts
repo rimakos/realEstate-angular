@@ -12,20 +12,13 @@ import {Category, CategoryService} from '../../services/categoryService';
 export class PropertyManageComponent implements OnInit {
   propertyForm = new FormGroup({});
   categories: Category[] = [];
+  types: string[] = ['Duplex', 'Triplex', 'Studio'];
+  statuses: string[] = ['Rent', 'Sale'];
 
-
-  types: TypeViewModel[] = [
-    {id: Type.Duplex, name: 'Duplex'},
-    {id: Type.Triplex, name: 'Triplex'},
-    {id: Type.Studio, name: 'Studio'},
-  ];
-  propertyStatus: PropertyStatusViewModel[] = [
-    {id: PropertyStatus.Rent, name: 'Rent'},
-    {id: PropertyStatus.Sale, name: 'Sale'},
-  ];
-
-  // tslint:disable-next-line:max-line-length
-  constructor(private categoryService: CategoryService, private propertyService: PropertyService, private router: Router, private activeRoute: ActivatedRoute) {
+  constructor(private categoryService: CategoryService,
+              private propertyService: PropertyService,
+              private router: Router,
+              private activeRoute: ActivatedRoute) {
   }
 
   ngOnInit(): void {
@@ -66,16 +59,6 @@ export class PropertyManageComponent implements OnInit {
         return this.router.navigate(['/properties']);
       });
   }
-}
-
-interface TypeViewModel {
-  id: number;
-  name: string;
-}
-
-interface PropertyStatusViewModel {
-  id: number;
-  name: string;
 }
 
 
