@@ -1,0 +1,22 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Manage Banners</h5>
+    <form [formGroup]="bannerForm" (ngSubmit)="onSubmit()">
+      <input type="hidden" formControlName="id"/>
+
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" formControlName="name"/>
+      </div>
+
+      <div class="mb-3">
+        <label for="photo" class="form-label">Photo</label>
+        <input type="file" class="form-control" id="photo" (change)="uploadFile($event)" />
+      </div>
+      <div>
+        <button  class="btn btn-primary">Save Banner</button>
+        <a routerLink="/banners" class="btn">Cancel</a>
+      </div>
+    </form>
+  </div>
+</div>
