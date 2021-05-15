@@ -3,6 +3,9 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Property, PropertyService, PropertyStatus, Type} from '../../services/propertyService';
 import {Category, CategoryService} from '../../services/categoryService';
+import {UploadService} from '../../services/upload.service';
+import {PropertyType} from 'codelyzer/componentMaxInlineDeclarationsRule';
+import {HttpEventType, HttpResponse} from '@angular/common/http';
 
 @Component({
   selector: 'app-property-manage',
@@ -18,7 +21,8 @@ export class PropertyManageComponent implements OnInit {
   constructor(private categoryService: CategoryService,
               private propertyService: PropertyService,
               private router: Router,
-              private activeRoute: ActivatedRoute) {
+              private activeRoute: ActivatedRoute,
+              private uploadService: UploadService) {
   }
 
   ngOnInit(): void {
@@ -52,8 +56,32 @@ export class PropertyManageComponent implements OnInit {
       bedroom: new FormControl(property.bedroom, [Validators.required, Validators.min(1), Validators.max(20)]),
       bathroom: new FormControl(property.bathroom, [Validators.required, Validators.min(1), Validators.max(20)]),
       feautered: new FormControl(property.featured),
+      photo: new FormControl(property.photo)
     });
   }
+
+  uploadFile(event: any): void {
+    const file: File | null = event.target.files.item(0);
+    if (!file) {
+      return;
+    }
+
+    this.uploadService.upload(file).subscribe(
+      (httpEvent: any) => {
+        if (httpEvent.type === HttpEventType.UploadProgress) {
+          console.log(Math.round(100 * event.loaded / event.total));
+        } else if (httpEvent instanceof HttpResponse) {
+          this.propertyForm.patchValue({
+            photo: file.name,
+          });
+        }
+      },
+      (err: any) => {
+        console.log(err);
+        alert('Error uploading file');
+      });
+  }
+
 
   onSubmit(): void {
     this.propertyService.save(this.propertyForm.value)

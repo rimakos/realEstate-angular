@@ -97,6 +97,11 @@
         <input type="checkbox" ng-model="checkboxModel.featured" id="featured" formControlName="featured"/>
       </div>
 
+      <div class="mb-3">
+        <label for="photo" class="form-label">Photo</label>
+        <input type="file" class="form-control" id="photo" (change)="uploadFile($event)" />
+      </div>
+
       <div>
         <button [disabled]="!propertyForm.valid" class="btn btn-primary">Save Property</button>
         <a routerLink="/properties" class="btn">Cancel</a>

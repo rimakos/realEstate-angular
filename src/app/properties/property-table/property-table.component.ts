@@ -9,7 +9,7 @@ import {Category, CategoryService} from '../../services/categoryService';
 })
 export class PropertyTableComponent implements OnInit {
 
-  properties: Property[] = [];
+      properties: Property[] = [];
 
   constructor( private propertyService: PropertyService) {
   }

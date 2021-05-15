@@ -23,6 +23,8 @@
         <th scope="col">Bedrooms</th>
         <th scope="col">Bathrooms</th>
         <th scope="col">Featured</th>
+        <th scope="col">Photo</th>
+
       </tr>
       </thead>
       <tbody>
@@ -39,6 +41,8 @@
         <td>{{property.bedroom}}</td>
         <td>{{property.bathroom}}</td>
         <td>{{property.featured}}</td>
+        <td><img src="http://localhost:8080/api/files/{{property.photo}}" class="img-fluid" alt="{{property.photo}}"/>
+        </td>
         <td>
           <a class="me-3" [routerLink]="['/properties/manage', property.id]">Edit</a>
           <a (click)="onDeleteProperties(property.id)">Delete</a>

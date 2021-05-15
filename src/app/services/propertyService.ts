@@ -22,7 +22,7 @@ export class PropertyService {
     return this.http.get<Property>(`${this.baseUrl}/${id}`);
   }
 
-  save(property: Property): Observable<number> {
+  save(property: SavePropertyRequest): Observable<number> {
     return this.http.post<number>(this.baseUrl, property, this.httpHeaders);
   }
 
@@ -50,6 +50,7 @@ export interface Property {
   location: string;
   featured: boolean;
   categoryId: number;
+  photo: string;
 }
 
 export interface SavePropertyRequest {
@@ -65,6 +66,7 @@ export interface SavePropertyRequest {
   location: string;
   featured: boolean;
   categoryId: number;
+  photo: string;
 }
 
 export enum PropertyStatus {
