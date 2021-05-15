@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Category, CategoryService} from '../../services/categoryService';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
+import {debounce} from 'rxjs/operators';
 
 @Component({
   selector: 'app-category-manage',

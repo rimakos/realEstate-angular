@@ -13,6 +13,8 @@ import {PropertyTableComponent} from './properties/property-table/property-table
 import {ReservationTableComponent} from './reservations/reservation-table/reservation-table.component';
 import {ReservationManageComponent} from './reservations/reservation-manage/reservation-manage.component';
 import { PropertiesByCategoryTableComponent } from './properties-by-category-table/properties-by-category-table.component';
+import { BannerTableComponent } from './banner-table/banner-table.component';
+import { BannerManageComponent } from './banner-manage/banner-manage.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { PropertiesByCategoryTableComponent } from './properties-by-category-tab
     PropertyTableComponent,
     ReservationTableComponent,
     ReservationManageComponent,
-    PropertiesByCategoryTableComponent
+    PropertiesByCategoryTableComponent,
+    BannerTableComponent,
+    BannerManageComponent
   ],
     imports: [
         BrowserModule,
