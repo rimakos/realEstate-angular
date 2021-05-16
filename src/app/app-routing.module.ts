@@ -13,7 +13,8 @@ import {BannerManageComponent} from './banner/banner-manage/banner-manage.compon
 import {BannerTableComponent} from './banner/banner-table/banner-table.component';
 import {PostTableComponent} from './blog/post-table/post-table.component';
 import {PostManageComponent} from './blog/post-manage/post-manage.component';
-
+import {AgentManageComponent} from './agent-manage/agent-manage.component';
+import {AgentTableComponent} from './agent-table/agent-table.component';
 const routes: Routes = [
   {path: '', redirectTo: '/clients', pathMatch: 'full'},
   {path: 'clients', component: ClientTableComponent},
@@ -31,10 +32,7 @@ const routes: Routes = [
   {path: 'properties/byCategory/:id', component: PropertiesByCategoryTableComponent},
   {path: 'banners/manage', component: BannerManageComponent},
   {path: 'banners/manage/:id', component: BannerManageComponent},
-  {path: 'banners', component: BannerTableComponent},
-  {path: 'posts/manage', component: PostManageComponent},
-  {path: 'posts/manage/:id', component: PostManageComponent},
-  {path: 'posts', component: PostTableComponent}
+  {path: 'banners', component: BannerTableComponent}
 ];
 
 @NgModule({

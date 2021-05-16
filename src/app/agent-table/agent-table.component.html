@@ -1,0 +1,27 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Agents</h5>
+    <a routerLink="/agents/manage" class="btn btn-primary">Create  new</a>
+    <table class="table table-bordered">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Photo Status</th>
+        <th scope="col">Bio</th>
+        <th scope="col">Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let agents of agents">
+        <th scope="row">{{agents.id}}</th>
+        <td>{{agents.name}}</td>
+        <td><img src="http://localhost:8080/api/files/{{agents.photo}}" class="img-fluid" alt="{{agents.photo}}"/>
+        </td>
+
+        <a class="me-3" [routerLink]="['/agents/manage', agents.id]">Edit</a>
+        <a (click)="onDeleteAgent(agents.id)">Delete</a>
+
+
+      </tbody>
+    </table>
