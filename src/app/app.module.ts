@@ -15,6 +15,8 @@ import {ReservationManageComponent} from './reservations/reservation-manage/rese
 import { PropertiesByCategoryTableComponent } from './properties-by-category-table/properties-by-category-table.component';
 import { BannerTableComponent } from './banner-table/banner-table.component';
 import { BannerManageComponent } from './banner-manage/banner-manage.component';
+import { AgentTableComponent } from './agent-table/agent-table.component';
+import { AgentManageComponent } from './agent-manage/agent-manage.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { BannerManageComponent } from './banner-manage/banner-manage.component';
     ReservationManageComponent,
     PropertiesByCategoryTableComponent,
     BannerTableComponent,
-    BannerManageComponent
+    BannerManageComponent,
+    AgentTableComponent,
+    AgentManageComponent
   ],
     imports: [
         BrowserModule,

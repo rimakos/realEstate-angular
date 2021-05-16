@@ -11,7 +11,8 @@ import {ReservationManageComponent} from './reservations/reservation-manage/rese
 import {PropertiesByCategoryTableComponent} from './properties-by-category-table/properties-by-category-table.component';
 import {BannerManageComponent} from './banner-manage/banner-manage.component';
 import {BannerTableComponent} from './banner-table/banner-table.component';
-
+import {AgentManageComponent} from './agent-manage/agent-manage.component';
+import {AgentTableComponent} from './agent-table/agent-table.component';
 const routes: Routes = [
   {path: '', redirectTo: '/clients', pathMatch: 'full'},
   {path: 'clients', component: ClientTableComponent},
@@ -29,7 +30,11 @@ const routes: Routes = [
   {path: 'properties/byCategory/:id', component: PropertiesByCategoryTableComponent},
   {path: 'banners/manage', component: BannerManageComponent},
   {path: 'banners/manage/:id', component: BannerManageComponent},
-  {path: 'banners', component: BannerTableComponent}
+  {path: 'banners', component: BannerTableComponent},
+  {path: 'agents/manage', component: AgentManageComponent},
+  {path: 'agents', component: AgentTableComponent},
+  {path: 'agents/manage/:id', component: AgentManageComponent}
+
 ];
 
 @NgModule({
