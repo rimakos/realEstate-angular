@@ -4,7 +4,6 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {Property, PropertyService, PropertyStatus, Type} from '../../services/propertyService';
 import {Category, CategoryService} from '../../services/categoryService';
 import {UploadService} from '../../services/upload.service';
-import {PropertyType} from 'codelyzer/componentMaxInlineDeclarationsRule';
 import {HttpEventType, HttpResponse} from '@angular/common/http';
 
 @Component({
