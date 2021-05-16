@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
-import {UploadService} from '../services/upload.service';
+import {UploadService} from '../../services/upload.service';
 import {HttpEventType, HttpResponse} from '@angular/common/http';
-import {Banner, BannerService} from '../services/banner-service.service';
+import {Banner, BannerService} from '../../services/banner-service.service';
 
 @Component({
   selector: 'app-banner-manage',

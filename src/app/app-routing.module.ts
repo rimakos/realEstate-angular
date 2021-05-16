@@ -9,8 +9,10 @@ import {PropertyManageComponent} from './properties/property-manage/property-man
 import {ReservationTableComponent} from './reservations/reservation-table/reservation-table.component';
 import {ReservationManageComponent} from './reservations/reservation-manage/reservation-manage.component';
 import {PropertiesByCategoryTableComponent} from './properties-by-category-table/properties-by-category-table.component';
-import {BannerManageComponent} from './banner-manage/banner-manage.component';
-import {BannerTableComponent} from './banner-table/banner-table.component';
+import {BannerManageComponent} from './banner/banner-manage/banner-manage.component';
+import {BannerTableComponent} from './banner/banner-table/banner-table.component';
+import {PostTableComponent} from './blog/post-table/post-table.component';
+import {PostManageComponent} from './blog/post-manage/post-manage.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/clients', pathMatch: 'full'},
@@ -29,7 +31,10 @@ const routes: Routes = [
   {path: 'properties/byCategory/:id', component: PropertiesByCategoryTableComponent},
   {path: 'banners/manage', component: BannerManageComponent},
   {path: 'banners/manage/:id', component: BannerManageComponent},
-  {path: 'banners', component: BannerTableComponent}
+  {path: 'banners', component: BannerTableComponent},
+  {path: 'posts/manage', component: PostManageComponent},
+  {path: 'posts/manage/:id', component: PostManageComponent},
+  {path: 'posts', component: PostTableComponent}
 ];
 
 @NgModule({

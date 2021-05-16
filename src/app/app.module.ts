@@ -13,8 +13,10 @@ import {PropertyTableComponent} from './properties/property-table/property-table
 import {ReservationTableComponent} from './reservations/reservation-table/reservation-table.component';
 import {ReservationManageComponent} from './reservations/reservation-manage/reservation-manage.component';
 import { PropertiesByCategoryTableComponent } from './properties-by-category-table/properties-by-category-table.component';
-import { BannerTableComponent } from './banner-table/banner-table.component';
-import { BannerManageComponent } from './banner-manage/banner-manage.component';
+import { BannerTableComponent } from './banner/banner-table/banner-table.component';
+import { BannerManageComponent } from './banner/banner-manage/banner-manage.component';
+import { PostTableComponent } from './blog/post-table/post-table.component';
+import { PostManageComponent } from './blog/post-manage/post-manage.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { BannerManageComponent } from './banner-manage/banner-manage.component';
     ReservationManageComponent,
     PropertiesByCategoryTableComponent,
     BannerTableComponent,
-    BannerManageComponent
+    BannerManageComponent,
+    PostTableComponent,
+    PostManageComponent
   ],
     imports: [
         BrowserModule,
