@@ -1,0 +1,34 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Posts</h5>
+    <a class="btn btn-primary" routerLink="/posts/manage">Create</a>
+    <div class="btn-group" role="group" style="float: right">
+    </div>
+
+    <table class="table table-bordered">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Description</th>
+        <th scope="col">Photo</th>
+
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let post of posts">
+        <th scope="row">{{post.id}}</th>
+        <td>{{post.title}}</td>
+        <td>{{post.description}}</td>
+        <td><img src="http://localhost:8080/api/files/{{post.photo}}" class="img-fluid" alt="{{post.photo}}"/>
+        </td>
+        <td>
+          <a class="me-3" [routerLink]="['/posts/manage', post.id]">Edit</a>
+          <a (click)="onDeletePosts(post.id)">Delete</a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
