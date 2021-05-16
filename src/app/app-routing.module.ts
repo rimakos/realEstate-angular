@@ -13,6 +13,8 @@ import {BannerManageComponent} from './banner-manage/banner-manage.component';
 import {BannerTableComponent} from './banner-table/banner-table.component';
 import {AgentManageComponent} from './agent-manage/agent-manage.component';
 import {AgentTableComponent} from './agent-table/agent-table.component';
+import {PageManageComponent} from './page/page-manage/page-manage.component';
+import {PageListComponent} from './page/page-list/page-list.component';
 const routes: Routes = [
   {path: '', redirectTo: '/clients', pathMatch: 'full'},
   {path: 'clients', component: ClientTableComponent},
@@ -33,7 +35,12 @@ const routes: Routes = [
   {path: 'banners', component: BannerTableComponent},
   {path: 'agents/manage', component: AgentManageComponent},
   {path: 'agents', component: AgentTableComponent},
-  {path: 'agents/manage/:id', component: AgentManageComponent}
+  {path: 'agents/manage/:id', component: AgentManageComponent},
+  {path:  'pages', component: PageListComponent},
+  {path: 'pages/manage', component: PageManageComponent},
+  {path: 'pages/manage/:id', component: PageManageComponent}
+
+
 
 ];
 
