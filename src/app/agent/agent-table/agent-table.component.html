@@ -7,7 +7,7 @@
       <tr>
         <th scope="col">#</th>
         <th scope="col">Name</th>
-        <th scope="col">Photo Status</th>
+        <th scope="col">Photo</th>
         <th scope="col">Bio</th>
         <th scope="col">Actions</th>
       </tr>
@@ -18,7 +18,7 @@
         <td>{{agents.name}}</td>
         <td><img src="http://localhost:8080/api/files/{{agents.photo}}" class="img-fluid" alt="{{agents.photo}}"/>
         </td>
-
+        <td>{{agents.bio}}</td>
         <a class="me-3" [routerLink]="['/agents/manage', agents.id]">Edit</a>
         <a (click)="onDeleteAgent(agents.id)">Delete</a>
 

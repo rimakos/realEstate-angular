@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Agent, AgentService} from '../services/agentService';
+import {Agent, AgentService} from '../../services/agentService';
 
 
 @Component({

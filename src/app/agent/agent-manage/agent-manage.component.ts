@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {UploadService} from '../services/upload.service';
+import {UploadService} from '../../services/upload.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {HttpEventType, HttpResponse} from '@angular/common/http';
-import {Agent, AgentService} from '../services/agentService';
-import {Banner} from '../services/banner-service.service';
+import {Agent, AgentService} from '../../services/agentService';
+import {Banner} from '../../services/banner-service.service';
 
 @Component({
   selector: 'app-agent-manage',
