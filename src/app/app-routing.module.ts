@@ -15,6 +15,8 @@ import {PostTableComponent} from './blog/post-table/post-table.component';
 import {PostManageComponent} from './blog/post-manage/post-manage.component';
 import {AgentManageComponent} from './agent/agent-manage/agent-manage.component';
 import {AgentTableComponent} from './agent/agent-table/agent-table.component';
+import {PageManageComponent} from './page/page-manage/page-manage.component';
+import {PageListComponent} from './page/page-list/page-list.component';
 const routes: Routes = [
   {path: '', redirectTo: '/clients', pathMatch: 'full'},
   {path: 'clients', component: ClientTableComponent},
@@ -38,7 +40,10 @@ const routes: Routes = [
   {path: 'posts', component: PostTableComponent},
   {path: 'agents/manage', component: AgentManageComponent},
   {path: 'agents/manage/:id', component: AgentManageComponent},
-  {path: 'agents', component: AgentTableComponent}
+  {path: 'agents', component: AgentTableComponent},
+  {path: 'pages/manage', component: PageManageComponent},
+  {path: 'pages/manage/:id', component: PageManageComponent},
+  {path: 'pages', component: PageListComponent}
 ];
 
 @NgModule({

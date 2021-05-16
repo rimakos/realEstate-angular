@@ -1,0 +1,28 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Pages</h5>
+    <a routerLink="/pages/manage" class="btn btn-primary">Create  new</a>
+    <table class="table table-bordered">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Photo</th>
+        <th scope="col">Content</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let pages of pages">
+        <th scope="row">{{pages.id}}</th>
+        <td>{{pages.title}}</td>
+        <td><img src="http://localhost:8080/api/files/{{pages.photo}}" class="img-fluid" alt="{{pages.photo}}"/>
+        <td>{{pages.content}}</td>
+
+        <a class="me-3" [routerLink]="['/pages/manage', pages.id]">Edit</a>
+        <a (click)="onDeletePages(pages.id)">Delete</a>
+
+
+      </tbody>
+    </table>
+  </div>
+</div>
