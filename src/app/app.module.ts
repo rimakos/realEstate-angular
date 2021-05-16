@@ -17,6 +17,9 @@ import { BannerTableComponent } from './banner-table/banner-table.component';
 import { BannerManageComponent } from './banner-manage/banner-manage.component';
 import { AgentTableComponent } from './agent-table/agent-table.component';
 import { AgentManageComponent } from './agent-manage/agent-manage.component';
+import {PageListComponent} from './page/page-list/page-list.component';
+import {PageManageComponent} from './page/page-manage/page-manage.component';
+
 
 @NgModule({
   declarations: [
@@ -34,7 +37,9 @@ import { AgentManageComponent } from './agent-manage/agent-manage.component';
     BannerTableComponent,
     BannerManageComponent,
     AgentTableComponent,
-    AgentManageComponent
+    AgentManageComponent,
+    PageManageComponent,
+    PageListComponent
   ],
     imports: [
         BrowserModule,
