@@ -14,16 +14,16 @@ export class ReservationService {
   };
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<Reservation[]> {
-    return this.http.get<Reservation[]>(`${this.baseUrl}`);
+  getAll(): Observable<SaveReservationRequest[]> {
+    return this.http.get<SaveReservationRequest[]>(`${this.baseUrl}`);
   }
 
-  getById(id: number): Observable<Reservation> {
-    return this.http.get<Reservation>(`${this.baseUrl}/${id}`);
+  getById(id: number): Observable<SaveReservationRequest> {
+    return this.http.get<SaveReservationRequest>(`${this.baseUrl}/${id}`);
   }
 
-  save(reservation: Reservation): Observable<number> {
-    return this.http.post<number>(this.baseUrl, reservation, this.httpHeaders);
+  save(reservation: SaveReservationRequest): Observable<number> {
+    return this.http.post<number>(`${this.baseUrl}/newreservation`, reservation, this.httpHeaders);
   }
 
   delete(id: number): Observable<void> {
@@ -32,7 +32,7 @@ export class ReservationService {
 
 }
 
-export interface Reservation {
+export interface SaveReservationRequest {
   id: number;
   name: string;
   finalPrice: number;
@@ -43,11 +43,10 @@ export interface Reservation {
 
 export interface SaveReservationRequest {
   id: number;
-  name: string;
+  clientName: string;
+  clientEmail: string;
   finalPrice: number;
-  comment: string;
-  clientId: number;
-  category: string;
+  phoneNumber: string;
   propertyId: number;
 
 }

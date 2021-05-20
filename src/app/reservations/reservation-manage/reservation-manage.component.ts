@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
-import {Reservation, ReservationService} from '../../services/reservationService';
+import {SaveReservationRequest, ReservationService} from '../../services/reservationService';
 
 @Component({
   selector: 'app-reservation-manage',
@@ -22,16 +22,18 @@ export class ReservationManageComponent implements OnInit {
           this.reservationForm = this.createReservationForm(reservation);
         });
     } else {
-      this.reservationForm = this.createReservationForm({} as Reservation);
+      this.reservationForm = this.createReservationForm({} as SaveReservationRequest);
     }
   }
 
-  createReservationForm(reservation: Reservation): FormGroup {
+  createReservationForm(reservation: SaveReservationRequest): FormGroup {
     return new FormGroup({
       id: new FormControl(reservation.id),
-      clientName: new FormControl(reservation.name),
+      clientName: new FormControl(reservation.clientName),
+      clientEmail: new FormControl(reservation.clientEmail),
+      phoneNumber: new FormControl(reservation.phoneNumber),
       finalPrice: new FormControl(reservation.finalPrice, Validators.required),
-      comment: new FormControl(reservation.comment),
+      propertyId: new FormControl(reservation.propertyId),
     });
   }
 

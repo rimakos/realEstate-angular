@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Reservation, ReservationService} from '../../services/reservationService';
+import {SaveReservationRequest, ReservationService} from '../../services/reservationService';
 
 @Component({
   selector: 'app-reservation-table',
@@ -8,7 +8,7 @@ import {Reservation, ReservationService} from '../../services/reservationService
 })
 export class ReservationTableComponent implements OnInit {
 
-  reservations: Reservation[] = [];
+  reservations: SaveReservationRequest[] = [];
 
   constructor(private reservationService: ReservationService) {
   }
