@@ -54,7 +54,7 @@ export class PropertyManageComponent implements OnInit {
       yearBuild: new FormControl(property.yearBuild, [Validators.required, Validators.min(2000), Validators.max(2020)]),
       bedroom: new FormControl(property.bedroom, [Validators.required, Validators.min(1), Validators.max(20)]),
       bathroom: new FormControl(property.bathroom, [Validators.required, Validators.min(1), Validators.max(20)]),
-      feautered: new FormControl(property.featured),
+      featured: new FormControl(property.featured),
       photo: new FormControl(property.photo)
     });
   }
